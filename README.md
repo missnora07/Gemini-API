@@ -50,7 +50,7 @@ npm start
 
 ### Gemini Vision (POST)
 
-```plaintext
+```javascript
 const axios = require('axios');
 const fs = require('fs').promises;
 const apiUrl = "http://localhost:3000";
