@@ -56,7 +56,7 @@ const fs = require('fs').promises;
 var prompt = "Hello";
 var filePath = "./image.jpeg";
 var mimeType = "image/jpeg";
-var api_key = "paste your key here";
+var api_key = "your_key";
 
 (async () => {
   try {
