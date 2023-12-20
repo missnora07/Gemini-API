@@ -13,7 +13,7 @@ Make sure you have Node.js installed. If not, you can download it [here](https:/
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/Gemini-API.git
+git clone https://github.com/missnora07/Gemini-API.git
 ```
 
 2. Navigate to the project folder:
