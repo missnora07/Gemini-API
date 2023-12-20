@@ -53,6 +53,7 @@ npm start
 ```plaintext
 const axios = require('axios');
 const fs = require('fs').promises;
+const apiUrl = "http://localhost:3000";
 var prompt = "Hello";
 var filePath = "./image.jpeg";
 var mimeType = "image/jpeg";
