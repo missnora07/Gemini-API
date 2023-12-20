@@ -4,7 +4,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const app = express();
 const PORT = 3000;
 
-app.get("/api/gemini", async (req, res) => {
+app.get("/gemini", async (req, res) => {
   const prompt = req.query.prompt;
 
   if (!prompt) {
@@ -33,7 +33,7 @@ app.get("/api/gemini", async (req, res) => {
 
 
 app.use(bodyParser.json());
-app.post('/api/gemini-vision', async (req, res) => {
+app.post('/gemini-vision', async (req, res) => {
 
     const image = req.body.image;
     const prompt = req.body.prompt;
