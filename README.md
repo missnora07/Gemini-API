@@ -25,7 +25,7 @@ cd Gemini-API
 3. Install the required packages:
 
 ```bash
-npm install axios express @google/generative-ai
+npm install axios express @google/generative-ai body-parser
 ```
 
 ## Usage
@@ -40,7 +40,53 @@ npm start
 
 3. Integrate the API into your project to leverage the generative capabilities provided by @google/generative-ai.
 
-Feel free to explore and customize the code according to your project requirements.
+## Endpoints
+
+### Gemini Pro (GET)
+
+```plaintext
+/api/gemini?prompt=Hello&api_key=your_key
+```
+
+### Gemini Vision (POST)
+
+```plaintext
+const axios = require('axios');
+const fs = require('fs').promises;
+var prompt = "Hello";
+var filePath = "./image.jpeg";
+var mimeType = "image/jpeg";
+var api_key = "paste your key here";
+
+(async () => {
+  try {
+    const imageData = await fs.readFile(filePath);
+    const base64Image = imageData.toString('base64');
+
+    const requestData = {
+      image: base64Image,
+      prompt: prompt,
+      mime_type: mimeType,
+    };
+
+    const response = await axios.post(apiUrl + '/gemini-vision', requestData, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api_key': api_key,
+      },
+    });
+
+    console.log(response.data.text || "_Server down, Try again later_");
+  } catch (error) {
+    return console.error(error.response ? error.response.data : error.message);
+  }
+})();
+```
+
+
+Make sure to replace `your_key` with your actual API key.
+
+(Currently only one image can process)
 
 ## Contributors
 
@@ -48,4 +94,4 @@ Feel free to explore and customize the code according to your project requiremen
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
