@@ -54,10 +54,10 @@ http://localhost:3000/gemini?prompt=Hello&api_key=your_key
 const axios = require('axios');
 const fs = require('fs').promises;
 const apiUrl = "http://localhost:3000/";
-var prompt = "Hello";
-var filePath = "./image.jpeg";
-var mimeType = "image/jpeg";
-var api_key = "your_key";
+const prompt = "Hello";
+const filePath = "./image.jpeg";
+const mimeType = "image/jpeg";
+const api_key = "your_key";
 
 (async () => {
   try {
@@ -70,7 +70,7 @@ var api_key = "your_key";
       mime_type: mimeType,
     };
 
-    const response = await axios.post(apiUrl + '/gemini-vision', requestData, {
+    const response = await axios.post(apiUrl + 'gemini-vision', requestData, {
       headers: {
         'Content-Type': 'application/json',
         'api_key': api_key,
