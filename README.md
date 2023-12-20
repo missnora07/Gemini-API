@@ -44,7 +44,7 @@ Feel free to explore and customize the code according to your project requiremen
 
 ## Contributors
 
-- Your Name
+- Amruth
 
 ## License
 
