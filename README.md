@@ -45,7 +45,7 @@ npm start
 ### Gemini Pro (GET)
 
 ```plaintext
-/api/gemini?prompt=Hello&api_key=your_key
+http://localhost:3000/api/gemini?prompt=Hello&api_key=your_key
 ```
 
 ### Gemini Vision (POST)
