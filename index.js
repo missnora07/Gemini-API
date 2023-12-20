@@ -1,5 +1,4 @@
 const express = require('express');
-const axios = require('axios');
 const bodyParser = require('body-parser');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const app = express();
