@@ -45,7 +45,7 @@ npm start
 ### Gemini Pro (GET)
 
 ```plaintext
-http://localhost:3000/api/gemini?prompt=Hello&api_key=your_key
+http://localhost:3000/gemini?prompt=Hello&api_key=your_key
 ```
 
 ### Gemini Vision (POST)
@@ -53,7 +53,7 @@ http://localhost:3000/api/gemini?prompt=Hello&api_key=your_key
 ```javascript
 const axios = require('axios');
 const fs = require('fs').promises;
-const apiUrl = "http://localhost:3000";
+const apiUrl = "http://localhost:3000/";
 var prompt = "Hello";
 var filePath = "./image.jpeg";
 var mimeType = "image/jpeg";
