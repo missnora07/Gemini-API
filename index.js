@@ -1,30 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
+app.use(cors())
 app.get("/gemini", async (req, res) => {
   const prompt = req.query.prompt;
-
   if (!prompt) {
     res.status(400).send("Error: Prompt is missing");
   }
-
   const api_key = req.query.api_key;
-
   if (!api_key) {
     res.status(401).send("Error: provide an api_key");
   }
-
-  if (api_key == "") {
-    res.status(402).send("Error: no api_key found");
-  }
-
   const genAI = new GoogleGenerativeAI(api_key);
-
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-
   const result = await model.generateContent(prompt);
   const response = result.response || "Unable to fetch content";
   res.set('Content-Type', 'application/json');
